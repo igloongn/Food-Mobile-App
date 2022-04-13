@@ -1,19 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar as ESB } from 'expo-status-bar';
+import { StyleSheet, Text, View, StatusBar } from 'react-native';
+import { FoodApp } from './src/Pages/FoodApp';
 
+
+console.log(StatusBar.currentHeight);
 export default function App() {
   return (
+    <>
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <FoodApp />
     </View>
+    {/* <StatusBar style='auto' /> */}
+    </>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    marginTop: StatusBar.currentHeight,
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#190b20',
+    // backgroundColor: 'red',
     alignItems: 'center',
     justifyContent: 'center',
   },
